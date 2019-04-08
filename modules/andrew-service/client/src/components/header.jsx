@@ -63,6 +63,7 @@ class Header extends React.Component {
 
   getMainDetails() {
     const { id } = this.state;
+
     axios.get(`/books/${id}/details`)
       .then((res) => {
         this.setState({
