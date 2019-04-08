@@ -1,0 +1,16 @@
+{
+  "name": "bookshelf",
+  "version": "1.0.0",
+  "description": "Front End Capstone HRR37",
+  "author": "Andrew Chung",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
