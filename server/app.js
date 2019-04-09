@@ -15,7 +15,7 @@ app.use('/books/:id', express.static(staticPath));
 
 app.use(
   '/books/:id/details',
-  proxy({ target: 'http://localhost:3001', changeOrigin: true })
+  proxy({ target: 'http://localhost:3001', changeOrigin: true }),
 );
 
 module.exports = app;
