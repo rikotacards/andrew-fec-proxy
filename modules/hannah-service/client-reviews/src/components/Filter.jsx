@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Tooltip from './Tooltip.jsx.js';
+import Tooltip from './Tooltip.jsx';
 
 const StyledLink = styled.a`
   color: #00635d;

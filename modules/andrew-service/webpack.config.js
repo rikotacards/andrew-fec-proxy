@@ -7,7 +7,7 @@
 console.log(__dirname);
 
 module.exports = {
-  entry: __dirname + '/client/src/index.jsx',
+  entry: __dirname + '/client-details/src/index.jsx',
   devtool: 'source-map',
   output: {
     filename: 'bundle-details.js',

@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MainInfo } from './DetailDataBoxParts/mainInfo.jsx.js';
-import Characters from './DetailDataBoxParts/characters.jsx.js';
-import Settings from './DetailDataBoxParts/settings.jsx.js';
-import Awards from './DetailDataBoxParts/awards.jsx.js';
+import { MainInfo } from './DetailDataBoxParts/mainInfo.jsx';
+import Characters from './DetailDataBoxParts/characters.jsx';
+import Settings from './DetailDataBoxParts/settings.jsx';
+import Awards from './DetailDataBoxParts/awards.jsx';
 
-const DataBoxWrapper = styled.div`
+const DataBoxContainer = styled.div`
   margin: 10px 0px;
 `;
 
@@ -20,14 +20,14 @@ const DetailDataBox = (props) => {
 
   return (
     <div>
-      <DataBoxWrapper>
+      <DataBoxContainer>
         <MainInfo
           mainInfo={mainInfo}
         />
         <Characters id={id} />
         <Settings id={id} />
         <Awards id={id} />
-      </DataBoxWrapper>
+      </DataBoxContainer>
     </div>
   );
 };

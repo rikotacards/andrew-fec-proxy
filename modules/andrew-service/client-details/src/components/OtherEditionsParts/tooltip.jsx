@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GreenButton } from '../header.jsx.js';
-import Stars from './stars.jsx.js';
+import { GreenButton } from '../header.jsx';
+import Stars from './stars.jsx';
 
 const Wrapper = styled.div`
   padding: 0px;

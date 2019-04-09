@@ -11,8 +11,6 @@ app.use(morgan('dev'));
 const staticPath = `${__dirname}/../public`;
 app.use('/books/:id', express.static(staticPath));
 
-// detailsApp.listen(3001);
-
 app.use(
   '/books/:id/details',
   proxy({ target: 'http://localhost:3001', changeOrigin: true }),
@@ -22,5 +20,11 @@ app.use(
   '/books/:id/reviews',
   proxy({ target: 'http://localhost:3003', changeOrigin: true }),
 );
+
+app.use(
+  '/books/:id/info',
+  proxy({ target: 'http://localhost:3002', changeOrigin: true }),
+);
+
 
 module.exports = app;
