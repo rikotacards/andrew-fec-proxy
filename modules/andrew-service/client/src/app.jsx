@@ -7,7 +7,6 @@ import { Header } from './components/header.jsx';
 
 class App extends React.Component {
   render() {
-    console.log('is app rendering?');
     return (
       <div>
         <Router>
