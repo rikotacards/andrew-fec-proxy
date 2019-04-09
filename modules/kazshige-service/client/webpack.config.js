@@ -28,7 +28,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname,'public'),
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'bundle-main.js'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()

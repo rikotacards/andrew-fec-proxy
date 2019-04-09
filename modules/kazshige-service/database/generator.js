@@ -1,3 +1,5 @@
+/* eslint-disable arrow-parens */
+/* eslint-disable class-methods-use-this */
 const AWS = require('aws-sdk');
 const config = require('./config')
 const s3Config = require('./s3')
@@ -14,7 +16,7 @@ const s3 = new AWS.S3({
 const createDB = () => {
   return db.queryAsync('CREATE DATABASE IF NOT EXISTS mainInfo')
     .then(() => {
-      return db.queryAsync('use books');
+      return db.queryAsync('use mainInfo');
     })
     .then(()=> {
       return db.queryAsync(`
@@ -208,7 +210,7 @@ class DummyDataGenerator {
 
   async seedData() {
     try{
-      await  createDB()
+      await createDB();
       await this.seedUsers();
       await this.seedBookInfo();
       await this.seedShelf();
