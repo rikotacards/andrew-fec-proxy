@@ -28,11 +28,11 @@ export default class App extends React.Component{
   componentDidMount(){
     const bookId = this.props.match.params.id
     this.fetchData(`books/${bookId}/info`, "bookInfo")
-    this.fetchData(`books/${bookId}/image`, "bookImage")
-    this.fetchData(`books/${bookId}/users`, "users")
-    this.fetchData(`books/${bookId}/ratings`, "ratings")
-    this.fetchData(`books/${bookId}/reviews`, "reviews")
-    this.fetchData(`books/${bookId}/users/1/readStatus`, "readStatus")
+    this.fetchData(`books/${bookId}/info/image`, "bookImage")
+    this.fetchData(`books/${bookId}/info/users`, "users")
+    this.fetchData(`books/${bookId}/info/ratings`, "ratings")
+    this.fetchData(`books/${bookId}/info/reviews`, "reviews")
+    this.fetchData(`books/${bookId}/info/users/1/readStatus`, "readStatus")
   }
 
   fetchData = (url, state) => {
@@ -53,7 +53,7 @@ export default class App extends React.Component{
     const statusArr = [];
 
     const bookId = this.props.match.params.id
-    axios.put(`${config.backendUrl}/books/${bookId}/users/1/readStatus`, { status: index})
+    axios.put(`${config.backendUrl}/books/${bookId}/info/users/1/readStatus`, { status: index})
     .then(({ data })=> {
       this.setState({
         readStatus: data
