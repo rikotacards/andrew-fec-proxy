@@ -215,4 +215,4 @@ class App extends React.Component {
 
 export default App;
 
-ReactDOM.render(<AppRouter />, document.getElementById('app'));
+ReactDOM.render(<AppRouter />, document.getElementById('reviews'));
