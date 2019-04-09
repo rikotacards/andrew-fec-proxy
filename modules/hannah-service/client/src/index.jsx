@@ -99,7 +99,7 @@ class App extends React.Component {
   }
 
   getAllUsers() {
-    $.get(`/books/${this.state.id}/reviews/users`, (data) => {
+    $.get(`/books/${this.state.id}/users`, (data) => {
       this.setState({
         users: data
       });
@@ -107,7 +107,7 @@ class App extends React.Component {
   }
 
   getRatedReviews(rating) {
-    $.get(`/books/${this.state.id}/reviews/rating/${this.state.rating}`, (data) => {
+    $.get(`/books/${this.state.id}/reviews/${this.state.rating}`, (data) => {
       this.setState({
         ratedReviews: data
       });
