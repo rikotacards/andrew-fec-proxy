@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import { EditionHeader } from './components/header.jsx';
 
-class App extends React.Component {
+class DetailApp extends React.Component {
   render() {
     return (
       <div>
@@ -17,4 +17,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default DetailApp;

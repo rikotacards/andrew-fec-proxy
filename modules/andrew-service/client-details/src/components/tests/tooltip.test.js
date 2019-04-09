@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import EditionTooltip, {
   Wrapper, BorderFrame, BorderCenter, Book, EditionStatusArrow, Stars, StatusButton, ToolTipArrow,
-} from '../OtherEditionsParts/tooltip';
+} from '../OtherEditionsParts/editionTooltip';
 
 describe('EditionTooltip Component', () => {
   const tooltipData = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import EditionTooltip from './tooltip.jsx';
+import EditionTooltip from './editionTooltip.jsx';
 
 const ImgLiWrapper = styled.li`
 display: inline-block;

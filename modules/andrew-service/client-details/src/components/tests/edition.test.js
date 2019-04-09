@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Edition from '../OtherEditionsParts/edition';
-import EditionTooltip from '../OtherEditionsParts/tooltip';
+import EditionTooltip from '../OtherEditionsParts/editionTooltip';
 
 describe('Edition Component', () => {
   const editionData = {
