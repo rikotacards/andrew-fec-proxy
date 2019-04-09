@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Tooltip from './tooltip.jsx';
+import Tooltip from './tooltip.jsx.js';
 
 const ImgLiWrapper = styled.li`
 display: inline-block;

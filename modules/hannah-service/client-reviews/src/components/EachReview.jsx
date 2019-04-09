@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import StarRatings from 'react-star-ratings';
-import ReviewActivity from './ReviewActivity.jsx'
+import ReviewActivity from './ReviewActivity.jsx.js'
 
 const ReviewContent = styled.div`
   font-family: Merriweather, Georgia, serif;

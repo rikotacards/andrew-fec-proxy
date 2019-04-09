@@ -1,5 +1,5 @@
 import React from 'react';
-import EachReview from './EachReview.jsx';
+import EachReview from './EachReview.jsx.js';
 
 const Reviews = (props) => {
   const block = {

@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import $ from 'jquery';
-import AppRouter from './router.jsx';
-import Reviews from './components/Reviews.jsx';
-import RatingDetails from './components/RatingDetails.jsx';
-import Filter from './components/Filter.jsx'
-import AddReview from './components/AddReview.jsx'
+import AppRouter from './router.jsx.js';
+import Reviews from './components/Reviews.jsx.js';
+import RatingDetails from './components/RatingDetails.jsx.js';
+import Filter from './components/Filter.jsx.js'
+import AddReview from './components/AddReview.jsx.js'
 
 const Container = styled.div`
   float: left;

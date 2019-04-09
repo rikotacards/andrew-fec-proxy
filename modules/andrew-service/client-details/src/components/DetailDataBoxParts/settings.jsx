@@ -3,8 +3,8 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 import axios from 'axios';
-import { DetailBoxRowTitle, DetailBoxRowItem } from './mainInfo.jsx';
-import { GreenButton, GreyItem } from '../header.jsx';
+import { DetailBoxRowTitle, DetailBoxRowItem } from './mainInfo.jsx.js';
+import { GreenButton, GreyItem } from '../header.jsx.js';
 
 class Settings extends React.Component {
   constructor(props) {
