@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Header, GreenButton } from '../header';
+import { EditionHeader, GreenButton } from '../header';
 
-describe('Header Component', () => {
+describe('EditionHeader Component', () => {
   const wrapper = shallow(
-    <Header match={{ params: { id: 1 } }} />,
+    <EditionHeader match={{ params: { id: 1 } }} />,
   );
 
   const details = {
@@ -20,22 +20,22 @@ describe('Header Component', () => {
     type: 'Paperback',
   };
 
-  test('Header returns null when given improper id number (101)', () => {
+  test('EditionHeader returns null when given improper id number (101)', () => {
     const wrapperFalse = shallow(
-      <Header match={{ params: { id: 101 } }} />,
+      <EditionHeader match={{ params: { id: 101 } }} />,
     );
     expect(wrapperFalse.find('div').length).toEqual(0);
   });
 
-  test('Header renders when given proper id number (1)', () => {
+  test('EditionHeader renders when given proper id number (1)', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-  test('Header state moreToggle is false by default', () => {
+  test('EditionHeader state moreToggle is false by default', () => {
     expect(wrapper.state('moreToggle')).toEqual(false);
   });
 
-  test('Header state moreToggle is changed to true with click', () => {
+  test('EditionHeader state moreToggle is changed to true with click', () => {
     wrapper.setState({
       details,
     });

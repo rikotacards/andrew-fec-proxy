@@ -79,7 +79,7 @@ const StatusButton = styled.span`
   border-left: 1px solid #38883d;
 `;
 
-const Arrow = styled.div`
+const EditionStatusArrow = styled.div`
   width: 0;
   height: 0;
   border-left: 4px solid transparent;
@@ -90,12 +90,12 @@ const Arrow = styled.div`
   position: relative;
 `;
 
-const Rating = styled.div`
+const EditionRating = styled.div`
   padding-left: 35px;
   padding-top-bottom: 5px;
 `;
 
-const Tooltip = (props) => {
+const EditionTooltip = (props) => {
   const {
     isbn10, isbn13, originalPubDate, publisher, title, type,
   } = props;
@@ -113,12 +113,12 @@ const Tooltip = (props) => {
             <GreenButton>Enlarge cover</GreenButton>
             <StatusWrapper>
               <span title="status" style={{ paddingRight: '10px' }}>Want to Read</span>
-              <StatusButton><Arrow /></StatusButton>
+              <StatusButton><EditionStatusArrow /></StatusButton>
             </StatusWrapper>
-            <Rating>
-              <span title="rating" style={{ paddingRight: '15px' }}>Rate this Book</span>
+            <EditionRating>
+              <span title="editionRating" style={{ paddingRight: '15px' }}>Rate this Book</span>
               <Stars />
-            </Rating>
+            </EditionRating>
 
           </Book>
         </BorderCenter>
@@ -128,13 +128,13 @@ const Tooltip = (props) => {
   );
 };
 
-export default Tooltip;
+export default EditionTooltip;
 export {
   Wrapper,
   BorderFrame,
   BorderCenter,
   Book,
-  Arrow,
+  EditionStatusArrow,
   Stars,
   StatusButton,
   ToolTipArrow,

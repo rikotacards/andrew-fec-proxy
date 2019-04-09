@@ -43,7 +43,7 @@ const DataBoxWrapper = styled.div`
   display:${props => (props.shouldDisplay ? 'block' : 'none')};
 `;
 
-class Header extends React.Component {
+class EditionHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -142,7 +142,7 @@ class Header extends React.Component {
 }
 
 export {
-  Header,
+  EditionHeader,
   GreenButton,
   GreyItem,
 };

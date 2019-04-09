@@ -3,14 +3,14 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
-import { Header } from './components/header.jsx';
+import { EditionHeader } from './components/header.jsx';
 
 class App extends React.Component {
   render() {
     return (
       <div>
         <Router>
-          <Route path="/books/:id" component={Header} />
+          <Route path="/books/:id" component={EditionHeader} />
         </Router>
       </div>
     );
