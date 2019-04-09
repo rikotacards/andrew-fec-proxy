@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const proxy = require('http-proxy-middleware');
 
-
 const app = express();
 app.use(bodyParser.json());
 app.use(morgan('dev'));
@@ -16,11 +15,13 @@ app.use(
   proxy({ target: 'http://localhost:3001', changeOrigin: true }),
 );
 
+// hannah-service
 app.use(
   '/books/:id/reviews',
   proxy({ target: 'http://localhost:3003', changeOrigin: true }),
 );
 
+// kaz-service
 app.use(
   '/books/:id/info',
   proxy({ target: 'http://localhost:3002', changeOrigin: true }),
