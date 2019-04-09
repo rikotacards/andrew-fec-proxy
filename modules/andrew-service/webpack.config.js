@@ -10,7 +10,7 @@ module.exports = {
   entry: __dirname + '/client/src/index.jsx',
   devtool: 'source-map',
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle-details.js',
     path: __dirname + '/public',
   },
 
