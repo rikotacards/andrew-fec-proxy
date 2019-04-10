@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS bookshelf;
+CREATE DATABASE IF NOT EXISTS authorData;
 
-USE bookshelf;
+USE authorData;
 
 CREATE TABLE IF NOT EXISTS books (
   id int NOT NULL AUTO_INCREMENT,
