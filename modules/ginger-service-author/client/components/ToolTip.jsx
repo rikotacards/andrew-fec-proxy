@@ -1,5 +1,5 @@
 import React from 'react';
-import ShelfButton from './ShelfButton.jsx.js';
+import ShelfButton from './ShelfButton.jsx';
 import style from './css/ToolTip.less';
 
 class ToolTip extends React.Component {
