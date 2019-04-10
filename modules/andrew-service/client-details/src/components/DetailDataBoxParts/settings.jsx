@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable class-methods-use-this */
@@ -74,21 +76,21 @@ class Settings extends React.Component {
 
     return (
       <div>
-        <DetailBoxRowTitle>Settings</DetailBoxRowTitle>
-        <DetailBoxRowItem>
+        <div className={sharedStyles.detailBoxRowTitle}>Settings</div>
+        <div className={sharedStyles.detailBoxRowItem}>
           {this.generateSettingsLine(settingsMain)}
           {moreToggle && this.generateSettingsLine(settingsMore)}
           {
             settingsMore && (
-              <GreenButton
-                className="moreButton"
+              <div
+                className={`${sharedStyles.greenUnderlineButton} moreButton`}
                 onClick={(e) => { this.handleClick(e); }}
               >
                 {moreToggle ? ' ...less' : ' ...more'}
-              </GreenButton>
+              </div>
             )
           }
-        </DetailBoxRowItem>
+        </div>
       </div>
     );
   }
