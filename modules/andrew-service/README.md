@@ -45,7 +45,7 @@ Main Development Modules
 - Node 10.14.x
 - Express
 - Mysql with bluebird promisification
-- React with styled-components
+- React with CSS Modules using LESS
 
 Main Testing Modules
 - Jest
