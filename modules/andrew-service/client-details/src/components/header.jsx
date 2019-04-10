@@ -2,50 +2,10 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
 import DetailDataBox from './detailDataBox.jsx';
 import OtherEditions from './otherEditions.jsx';
 import styles from './css/Header.less';
 import sharedStyles from './css/SharedStyles.less';
-
-// const DetailBody = styled.div`
-//   margin: 50px auto;
-//   width: 455px;
-//   background: #FFFFFF;
-//   padding: 5px 0;
-//   display: block;
-//   line-height: 18px;
-//   font-size: 12px;
-//   text-align: left;
-//   word-wrap: break-word;
-//   color: #333;
-//   font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-// `;
-
-const GreyItem = styled.span`
-  color: #999999;
-`;
-
-// const Buttons = styled.div`
-//   padding: 5px 0;
-// `;
-
-const GreenButton = styled.span`
-  color: #00635d;
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const GreyButton = styled(GreenButton)`
-  color: #999999;
-  float: right;
-  margin-right: 5px;
-`;
-
-// const DataBoxWrapper = styled.div`
-//   display:${props => (props.shouldDisplay ? 'block' : 'none')};
-// `;
 
 class EditionHeader extends React.Component {
   constructor(props) {
@@ -120,10 +80,8 @@ class EditionHeader extends React.Component {
     if (!this.state.details) {
       return (null);
     }
-
     const { id, moreToggle, display } = this.state;
     const shouldDisplay = display ? styles.dataBoxWrapperBlock : styles.dataBoxWrapperNone;
-
 
     return (
       <div className={styles.detailBody}>
@@ -144,13 +102,8 @@ class EditionHeader extends React.Component {
         </div>
 
       </div>
-
     );
   }
 }
 
-export {
-  EditionHeader,
-  GreenButton,
-  GreyItem,
-};
+export default EditionHeader;

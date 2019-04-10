@@ -4,8 +4,6 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 import axios from 'axios';
-// import { DetailBoxRowTitle, DetailBoxRowItem } from './mainInfo.jsx';
-// import { GreenButton } from '../header.jsx';
 import sharedStyles from '../css/SharedStyles.less';
 
 class Awards extends React.Component {
@@ -54,11 +52,9 @@ class Awards extends React.Component {
     }
 
     const allAwardsArray = [mainAwardsArr, moreAwardsArr];
-
     if (allAwardsArray[1].length === 0) {
       allAwardsArray[1] = null;
     }
-
     return allAwardsArray;
   }
 
@@ -83,7 +79,6 @@ class Awards extends React.Component {
 
   render() {
     const { awardsMain, awardsMore, moreToggle } = this.state;
-
     if (awardsMain === null) {
       return (null);
     }

@@ -4,8 +4,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import axios from 'axios';
-// import { DetailBoxRowTitle, DetailBoxRowItem } from './mainInfo.jsx';
-// import { GreenButton } from '../header.jsx';
 import sharedStyles from '../css/SharedStyles.less';
 
 class Characters extends React.Component {
@@ -53,11 +51,9 @@ class Characters extends React.Component {
     }
 
     const allCharactersArray = [mainCharactersArr, moreCharactersArr];
-
     if (allCharactersArray[1].length === 0) {
       allCharactersArray[1] = null;
     }
-
     return allCharactersArray;
   }
 
@@ -82,7 +78,6 @@ class Characters extends React.Component {
 
   render() {
     const { charactersMain, charactersMore, moreToggle } = this.state;
-
     if (charactersMain === null) {
       return (null);
     }

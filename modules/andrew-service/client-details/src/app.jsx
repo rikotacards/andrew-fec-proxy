@@ -3,11 +3,10 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
-import { EditionHeader } from './components/header.jsx';
+import EditionHeader from './components/header.jsx';
 
 class DetailApp extends React.Component {
   render() {
-    console.log('detailAPP??')
     return (
       <div>
         <Router>

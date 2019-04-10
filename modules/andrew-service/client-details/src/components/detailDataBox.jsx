@@ -1,13 +1,9 @@
 import React from 'react';
-import { MainInfo } from './DetailDataBoxParts/mainInfo.jsx';
+import MainInfo from './DetailDataBoxParts/mainInfo.jsx';
 import Characters from './DetailDataBoxParts/characters.jsx';
 import Settings from './DetailDataBoxParts/settings.jsx';
 import Awards from './DetailDataBoxParts/awards.jsx';
 import styles from './css/DetailDataBox.less';
-
-// const DataBoxContainer = styled.div`
-//   margin: 10px 0px;
-// `;
 
 const DetailDataBox = (props) => {
   const {

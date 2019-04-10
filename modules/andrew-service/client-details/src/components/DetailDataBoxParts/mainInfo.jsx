@@ -1,19 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-// import { GreyItem } from '../header.jsx';
 import sharedStyles from '../css/SharedStyles.less';
-
-const DetailBoxRowTitle = styled.div`
-  color: #382110;
-  font-weight: bold;
-  width: 25%;
-  float: left;
-`;
-
-const DetailBoxRowItem = styled.div`
-  width: 75%;
-  float: left;
-`;
 
 const MainInfo = (props) => {
   const {
@@ -42,8 +28,4 @@ const MainInfo = (props) => {
   );
 };
 
-export {
-  MainInfo,
-  DetailBoxRowTitle,
-  DetailBoxRowItem,
-};
+export default MainInfo;
