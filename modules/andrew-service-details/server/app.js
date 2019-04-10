@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const cors = require('cors');
 const db = require('../database/index');
 
 const app = express();
 app.use(bodyParser.json());
 app.use(morgan('dev'));
+app.use(cors());
 
 const staticPath = `${__dirname}/../public`;
 app.use('/books/:id', express.static(staticPath));

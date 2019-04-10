@@ -17,7 +17,7 @@ class Books extends React.Component {
   }
 
   getBooks() {
-  console.log('running!');
+
   fetch('/books/1/authors/1/titles')
     .then(res => res.json())
     .then((data) => {

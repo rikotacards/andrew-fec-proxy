@@ -38,7 +38,7 @@ export default class App extends React.Component{
   fetchData = (url, state) => {
     axios.get(`${config.backendUrl}/${url}`)
       .then((response)=> {
-        console.log(response.data)
+        
         this.setState({
           [state]: response.data
         })
