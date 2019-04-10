@@ -1,31 +1,33 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import DetailDataBox from './detailDataBox.jsx';
 import OtherEditions from './otherEditions.jsx';
-import styles from './sample.less';
+import styles from './header.less';
 
-const DetailBody = styled.div`
-  margin: 50px auto;
-  width: 455px;
-  background: #FFFFFF;
-  padding: 5px 0;
-  display: block;
-  line-height: 18px;
-  font-size: 12px;
-  text-align: left;
-  word-wrap: break-word;
-  color: #333;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-`;
+// const DetailBody = styled.div`
+//   margin: 50px auto;
+//   width: 455px;
+//   background: #FFFFFF;
+//   padding: 5px 0;
+//   display: block;
+//   line-height: 18px;
+//   font-size: 12px;
+//   text-align: left;
+//   word-wrap: break-word;
+//   color: #333;
+//   font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+// `;
 
 const GreyItem = styled.span`
   color: #999999;
 `;
 
-const Buttons = styled.div`
-  padding: 5px 0;
-`;
+// const Buttons = styled.div`
+//   padding: 5px 0;
+// `;
 
 const GreenButton = styled.span`
   color: #00635d;
@@ -40,9 +42,9 @@ const GreyButton = styled(GreenButton)`
   margin-right: 5px;
 `;
 
-const DataBoxWrapper = styled.div`
-  display:${props => (props.shouldDisplay ? 'block' : 'none')};
-`;
+// const DataBoxWrapper = styled.div`
+//   display:${props => (props.shouldDisplay ? 'block' : 'none')};
+// `;
 
 class EditionHeader extends React.Component {
   constructor(props) {
@@ -88,7 +90,7 @@ class EditionHeader extends React.Component {
         <div>
           {publishInfoLine}
           &nbsp;
-          <GreyItem>{firstPubDateLine}</GreyItem>
+          <span className={styles.greyoutButton}>{firstPubDateLine}</span>
         </div>
       </div>
     );
@@ -119,30 +121,29 @@ class EditionHeader extends React.Component {
     }
     console.log(styles.test);
     const { id, moreToggle, display } = this.state;
+    const shouldDisplay = display ? styles.dataBoxWrapperBlock : styles.dataBoxWrapperNone;
+
+
     return (
-      <div>
-      <div className={styles.header}> STYLED?</div>
-      <DetailBody>
+      <div className={styles.detailBody}>
         {this.generatePublisherInfoLine()}
 
-        <DataBoxWrapper shouldDisplay={display}>
+        <div className={shouldDisplay}>
           {moreToggle ? (<DetailDataBox className="DetailDataBox" details={this.state.details} />) : null}
           {moreToggle ? (<OtherEditions className="OtherEditions" id={id} />) : null}
-        </DataBoxWrapper>
+        </div>
 
-        <Buttons>
-          <GreenButton onClick={(e) => { this.handleClick(e); }}>
+        <div className={styles.headerButtons}>
+          <span className={styles.greenUnderlineButton} onClick={(e) => { this.handleClick(e); }}>
             {display ? '...Less Detail' : 'More Details...'}
-          </GreenButton>
-          <GreyButton>
+          </span>
+          <span className={styles.greyoutButton}>
             edit details
-          </GreyButton>
-        </Buttons>
+          </span>
+        </div>
 
-
-
-      </DetailBody>
       </div>
+
     );
   }
 }

@@ -1,0 +1,49 @@
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+
+@button-green: #00635d;
+@button-grey: #999999;
+
+.header {
+  color: @light-blue;
+}
+
+.detailBody {
+  margin: 50px auto;
+  width: 455px;
+  background: #FFFFFF;
+  padding: 5px 0;
+  display: block;
+  line-height: 18px;
+  font-size: 12px;
+  text-align: left;
+  word-wrap: break-word;
+  color: #333;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+.dataBoxWrapperBlock {
+   display: block;
+}
+
+.dataBoxWrapperNone {
+  display:none;
+}
+
+.headerButtons {
+  padding: 5px 0;
+}
+
+.greenUnderlineButton {
+  color: @button-green;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.greyoutButton {
+  color: @button-grey;
+  float: right;
+  margin-right: 5px;
+}
+
