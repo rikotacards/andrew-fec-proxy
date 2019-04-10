@@ -1,0 +1,26 @@
+.title {
+  color: skyblue;
+}
+
+#mainContainer {
+  display: grid;
+  grid-template-columns: [col-start] auto [col1] 650px [col2] 300px [col3] auto [col-end];
+  grid-template-rows: [row-start] 100px [row1] 300px [row2] auto [row3] 200px [row4] auto [row-end];
+}
+
+.mainInfo {
+  grid-column-start: col1;
+  grid-column-end: col2;
+  grid-row-start: row1;
+  grid-row-end: row2;
+  justify-self: center;
+}
+
+.extraDetails {
+  grid-column-start: col1;
+  grid-column-end: col2;
+  grid-row-start: row2;
+  grid-row-end: row3;
+  justify-self: end;
+}
+

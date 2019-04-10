@@ -3,24 +3,33 @@
 
 <head>
   <meta charset="utf-8">
-
-  <title>Book Details</title>
+  <link rel="stylesheet" type='text/css' href="styles.css">
+  <title>Bookshelf</title>
 
 </head>
 
 <body>
-  <div>
-    <div id='main'>Main</div>
+  <div id='mainContainer' s>
+    <div class='title'>HELLO</div>
+
+    <div class='mainInfo'>
+      <div id='main'>Main</div>
+    </div>
+
+    <div class='extraDetails'>
+      <div id='details'>Details</div>
+    </div>
+
   </div>
-  <div>
-    <div id='details'>Details</div>
-  </div>
-  <div>
-    <div id='author'>Author</div>
-  </div>
-  <div>
-    <div id='reviews'>Reviews</div>
-  </div>
+
+
+      <div>
+        <div id='author'>Author</div>
+      </div>
+      <div>
+        <div id='reviews'>Reviews</div>
+      </div>
+
   <script src="http://localhost:3002/bundle-main.js"></script>
   <script src="http://localhost:3001/books/:id/bundle-details.js"></script>
   <script src="http://localhost:3000/books/:id/bundle-author.js"></script>
@@ -28,4 +37,5 @@
 </body>
 
 </html>
+
 
