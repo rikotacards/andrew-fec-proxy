@@ -25,4 +25,10 @@ app.use(
   proxy({ target: 'http://localhost:3002', changeOrigin: true }),
 );
 
+// ginger-service
+app.use(
+  '/books/:id/authors',
+  proxy({ target: 'http://localhost:3000', changeOrigin: true }),
+);
+
 module.exports = app;

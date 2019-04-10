@@ -51,7 +51,7 @@ class Books extends React.Component {
       <div>
         {this.state.books.map(item => (
           <div className={style.bookContainer} key={item.id}>
-            <div className={style.bookCover} key={item.id} onMouseEnter={() => { this.displayToolTip(item.id); }} onMouseLeave={this.hideToolTip} src={item.cover} />
+            <img className={style.bookCover} key={item.id} onMouseEnter={() => { this.displayToolTip(item.id); }} onMouseLeave={this.hideToolTip} src={item.cover} alt="bookCover"/>
             {this.state.bookId === item.id
             && <ToolTip {...item} onUpdate={this.getBooks} author={this.props.author} onMouseEnter={this.displayToolTip} onMouseLeave={this.hideToolTip} />
             }

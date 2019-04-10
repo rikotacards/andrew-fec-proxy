@@ -31,7 +31,7 @@ class Author extends React.Component {
               {item.name}
             </h1>
             <div className={style.header}>
-              <Image className={style.image} src={item.profile_pic} />
+              <img className={style.image} src={item.profile_pic} alt="author" />
               <div>
                 <div className={style.name}>
                   {item.name}
