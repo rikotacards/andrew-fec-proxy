@@ -81,9 +81,9 @@ class OtherEditions extends React.Component {
           </ul>
           <div>
             <span className={sharedStyles.greenUnderlineButton}>All Editions</span>
-            <span className={sharedStyles.greyoutButton}> | </span>
+            <span className={styles.greyoutLine}> | </span>
             <span className={sharedStyles.greenUnderlineButton}>Add a New Editions</span>
-            <span className={sharedStyles.greyoutButton}> | </span>
+            <span className={styles.greyoutLine}> | </span>
             <span className={sharedStyles.greenUnderlineButton}>Combine</span>
           </div>
         </div>
