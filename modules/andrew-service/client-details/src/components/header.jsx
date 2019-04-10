@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import DetailDataBox from './detailDataBox.jsx';
 import OtherEditions from './otherEditions.jsx';
+import styles from './sample.less';
 
 const DetailBody = styled.div`
   margin: 50px auto;
@@ -116,9 +117,11 @@ class EditionHeader extends React.Component {
     if (!this.state.details) {
       return (null);
     }
-
+    console.log(styles.test);
     const { id, moreToggle, display } = this.state;
     return (
+      <div>
+      <div className={styles.header}> STYLED?</div>
       <DetailBody>
         {this.generatePublisherInfoLine()}
 
@@ -136,7 +139,10 @@ class EditionHeader extends React.Component {
           </GreyButton>
         </Buttons>
 
+
+
       </DetailBody>
+      </div>
     );
   }
 }

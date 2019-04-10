@@ -7,6 +7,7 @@ import { EditionHeader } from './components/header.jsx';
 
 class DetailApp extends React.Component {
   render() {
+    console.log('detailAPP??')
     return (
       <div>
         <Router>
