@@ -1,5 +1,5 @@
 import React from 'react';
-import Books from './Books.jsx';
+import Books from './Books.jsx.js';
 import style from './css/Author.less';
 
 class Author extends React.Component {

@@ -1,5 +1,5 @@
 import React from 'react';
-import ToolTip from './ToolTip.jsx';
+import ToolTip from './ToolTip.jsx.js';
 import style from './css/Books.less';
 
 

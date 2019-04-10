@@ -1,7 +1,7 @@
 import React from 'react';
 import StarRatingComponent from 'react-star-rating-component';
-import ShelfList from "./ShelfList.jsx";
-import Rating from "./Rating.jsx";
+import ShelfList from "./ShelfList.jsx.js";
+import Rating from "./Rating.jsx.js";
 import style from './css/ShelfButton.less';
 
 class ShelfButton extends React.Component {
