@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { GreenButton } from '../header.jsx';
 import Stars from './stars.jsx';
+import styles from '../css/EditionTooltip.less';
 
 const Wrapper = styled.div`
   padding: 0px;
@@ -101,30 +102,29 @@ const EditionTooltip = (props) => {
   } = props;
 
   return (
-    <Wrapper>
-      <BorderFrame>
-        <BorderCenter>
-          <Book>
+    <div className={styles.editionTooltipWrapper}>
+      <div className={styles.editionTooltipBorderFrame}>
+        <div className={styles.editionTooltipBorderCenter}>
+          <div className={styles.editionBook}>
             <div>{`${title} (${type})`}</div>
             <div>{`isbn: ${isbn10}`}</div>
             <div>{`isbn13: ${isbn13}`}</div>
             <div>{`format: ${type}`}</div>
             <div>{`Published ${originalPubDate} by ${publisher}`}</div>
             <GreenButton>Enlarge cover</GreenButton>
-            <StatusWrapper>
+            <div className={styles.editionStatusWrapper}>
               <span title="status" style={{ paddingRight: '10px' }}>Want to Read</span>
-              <StatusButton><EditionStatusArrow /></StatusButton>
-            </StatusWrapper>
-            <EditionRating>
+              <span className={styles.editionStatusButton}><div className={styles.editionStatusArrow} /></span>
+            </div>
+            <div className={styles.editionRating}>
               <span title="editionRating" style={{ paddingRight: '15px' }}>Rate this Book</span>
               <Stars />
-            </EditionRating>
-
-          </Book>
-        </BorderCenter>
-      </BorderFrame>
-      <ToolTipArrow />
-    </Wrapper>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.editionTooltipArrow} />
+    </div>
   );
 };
 
