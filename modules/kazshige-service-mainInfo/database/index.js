@@ -1,6 +1,6 @@
 const mysql = require('mysql');
 const Promise = require('bluebird');
-const mysqlConfig = require('./config.js');
+const mysqlConfig = require('./config.js.js');
 
 const connection = mysql.createConnection(mysqlConfig);
 // const db = Promise.promisifyAll(connection, { multiArgs: true });
