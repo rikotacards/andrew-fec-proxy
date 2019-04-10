@@ -88,10 +88,10 @@ class EditionHeader extends React.Component {
     return (
       <div>
         <div>{typeAndPageNumberLine}</div>
-        <div styles={{float: 'screenLeft'}}>
+        <div>
           {publishInfoLine}
           &nbsp;
-          <span className={styles.greyoutHeader}>{firstPubDateLine}</span>
+          <span className={sharedStyles.greyoutButton}>{firstPubDateLine}</span>
         </div>
       </div>
     );
@@ -120,7 +120,7 @@ class EditionHeader extends React.Component {
     if (!this.state.details) {
       return (null);
     }
-    console.log(styles.test);
+
     const { id, moreToggle, display } = this.state;
     const shouldDisplay = display ? styles.dataBoxWrapperBlock : styles.dataBoxWrapperNone;
 
@@ -138,7 +138,7 @@ class EditionHeader extends React.Component {
           <span className={sharedStyles.greenUnderlineButton} onClick={(e) => { this.handleClick(e); }}>
             {display ? '...Less Detail' : 'More Details...'}
           </span>
-          <span className={sharedStyles.greyoutButton}>
+          <span className={styles.greyoutHeaderButton}>
             edit details
           </span>
         </div>
