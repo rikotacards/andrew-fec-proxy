@@ -5,6 +5,7 @@ import React from 'react';
 import axios from 'axios';
 import { DetailBoxRowTitle, DetailBoxRowItem } from './mainInfo.jsx';
 import { GreenButton, GreyItem } from '../header.jsx';
+import sharedStyles from '../css/SharedStyles.less';
 
 class Settings extends React.Component {
   constructor(props) {
@@ -48,11 +49,11 @@ class Settings extends React.Component {
     array.forEach((setting, i) => {
       const { city, country } = setting;
       settingsSpanArray.push(
-        <GreenButton key={i}>
+        <div className={sharedStyles.greenUnderlineButton} key={i}>
           {`${city} `}
-          <GreyItem>({country})</GreyItem>
+          <span className={sharedStyles.greyoutButton}>({country})</span>
           <br />
-        </GreenButton>,
+        </div>,
       );
     });
 
