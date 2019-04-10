@@ -5,7 +5,8 @@ import axios from 'axios';
 import styled from 'styled-components';
 import DetailDataBox from './detailDataBox.jsx';
 import OtherEditions from './otherEditions.jsx';
-import styles from './header.less';
+import styles from './css/Header.less';
+import sharedStyles from './css/SharedStyles.less';
 
 // const DetailBody = styled.div`
 //   margin: 50px auto;
@@ -87,10 +88,10 @@ class EditionHeader extends React.Component {
     return (
       <div>
         <div>{typeAndPageNumberLine}</div>
-        <div>
+        <div styles={{float: 'screenLeft'}}>
           {publishInfoLine}
           &nbsp;
-          <span className={styles.greyoutButton}>{firstPubDateLine}</span>
+          <span className={styles.greyoutHeader}>{firstPubDateLine}</span>
         </div>
       </div>
     );
@@ -134,10 +135,10 @@ class EditionHeader extends React.Component {
         </div>
 
         <div className={styles.headerButtons}>
-          <span className={styles.greenUnderlineButton} onClick={(e) => { this.handleClick(e); }}>
+          <span className={sharedStyles.greenUnderlineButton} onClick={(e) => { this.handleClick(e); }}>
             {display ? '...Less Detail' : 'More Details...'}
           </span>
-          <span className={styles.greyoutButton}>
+          <span className={sharedStyles.greyoutButton}>
             edit details
           </span>
         </div>

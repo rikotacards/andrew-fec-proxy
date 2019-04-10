@@ -1,19 +1,21 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import { DetailBoxRowTitle, DetailBoxRowItem } from './DetailDataBoxParts/mainInfo.jsx';
-import { GreenButton, GreyItem } from './header.jsx';
+// import { DetailBoxRowTitle, DetailBoxRowItem } from './DetailDataBoxParts/mainInfo.jsx';
+// import { GreenButton, GreyItem } from './header.jsx';
 import Edition from './OtherEditionsParts/edition.jsx';
+import styles from './css/OtherEditions.less';
+import sharedStyles from './css/SharedStyles.less';
 
-const ImgUlWrapper = styled.ul`
-display: block;
-list-style-type: disc;
-margin-block-start: 0px;
-margin-block-end: 5px;
-margin-inline-start: 0px;
-margin-inline-end: 0px;
-padding-inline-start: 0px;
-`;
+// const ImgUlWrapper = styled.ul`
+// display: block;
+// list-style-type: disc;
+// margin-block-start: 0px;
+// margin-block-end: 5px;
+// margin-inline-start: 0px;
+// margin-inline-end: 0px;
+// padding-inline-start: 0px;
+// `;
 
 class OtherEditions extends React.Component {
   constructor(props) {
@@ -70,21 +72,21 @@ class OtherEditions extends React.Component {
 
     return (
       <div>
-        <DetailBoxRowTitle>
+        <div className={sharedStyles.detailBoxRowTitle}>
           {`Other Editions (${editionsCount})`}
-        </DetailBoxRowTitle>
-        <DetailBoxRowItem>
-          <ImgUlWrapper>
+        </div>
+        <div className={sharedStyles.detailBoxRowItem}>
+          <ul className={styles.imgUlWrapper}>
             {this.generateEditionLine()}
-          </ImgUlWrapper>
+          </ul>
           <div>
-            <GreenButton>All Editions</GreenButton>
-            <GreyItem> | </GreyItem>
-            <GreenButton>Add a New Editions</GreenButton>
-            <GreyItem> | </GreyItem>
-            <GreenButton>Combine</GreenButton>
+            <span className={sharedStyles.greenUnderlineButton}>All Editions</span>
+            <span className={sharedStyles.greyoutButton}> | </span>
+            <span className={sharedStyles.greenUnderlineButton}>Add a New Editions</span>
+            <span className={sharedStyles.greyoutButton}> | </span>
+            <span className={sharedStyles.greenUnderlineButton}>Combine</span>
           </div>
-        </DetailBoxRowItem>
+        </div>
       </div>
     );
   }
