@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GreyItem } from '../header.jsx';
+// import { GreyItem } from '../header.jsx';
+import sharedStyles from '../css/SharedStyles.less';
 
 const DetailBoxRowTitle = styled.div`
   color: #382110;
@@ -22,20 +23,20 @@ const MainInfo = (props) => {
   return (
     <div>
       <div>
-        <DetailBoxRowTitle>Original Title</DetailBoxRowTitle>
-        <DetailBoxRowItem>{title}</DetailBoxRowItem>
+        <div className={sharedStyles.detailBoxRowTitle}>Original Title</div>
+        <div className={sharedStyles.detailBoxRowItem}>{title}</div>
       </div>
       <div>
-        <DetailBoxRowTitle>ISBN</DetailBoxRowTitle>
-        <DetailBoxRowItem>
+        <div className={sharedStyles.detailBoxRowTitle}>ISBN</div>
+        <div className={sharedStyles.detailBoxRowItem}>
           {`${isbn10}`}
           &nbsp;
-          <GreyItem>{`(ISBN13: ${isbn13})`}</GreyItem>
-        </DetailBoxRowItem>
+          <span className={sharedStyles.greyoutButton}>{`(ISBN13: ${isbn13})`}</span>
+        </div>
       </div>
       <div>
-        <DetailBoxRowTitle>Language</DetailBoxRowTitle>
-        <DetailBoxRowItem>{language}</DetailBoxRowItem>
+        <div className={sharedStyles.detailBoxRowTitle}>Language</div>
+        <div className={sharedStyles.detailBoxRowItem}>{language}</div>
       </div>
     </div>
   );

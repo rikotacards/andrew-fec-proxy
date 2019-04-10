@@ -4,8 +4,8 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import axios from 'axios';
-import { DetailBoxRowTitle, DetailBoxRowItem } from './mainInfo.jsx';
-import { GreenButton } from '../header.jsx';
+// import { DetailBoxRowTitle, DetailBoxRowItem } from './mainInfo.jsx';
+// import { GreenButton } from '../header.jsx';
 import sharedStyles from '../css/SharedStyles.less';
 
 class Characters extends React.Component {
