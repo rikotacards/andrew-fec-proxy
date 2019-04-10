@@ -1,9 +1,12 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import axios from 'axios';
 import { DetailBoxRowTitle, DetailBoxRowItem } from './mainInfo.jsx';
 import { GreenButton } from '../header.jsx';
+import sharedStyles from '../css/SharedStyles.less';
 
 class Characters extends React.Component {
   constructor(props) {
@@ -64,10 +67,10 @@ class Characters extends React.Component {
     const lastIndex = charactersMain.length - 1;
 
     charactersMain.slice(0, lastIndex).forEach((character, i) => {
-      characterSpanArray.push(<GreenButton key={i}>{`${character}, `}</GreenButton>);
+      characterSpanArray.push(<span className={sharedStyles.greenUnderlineButton} key={i}>{`${character}, `}</span>);
     });
 
-    characterSpanArray.push(<GreenButton key={lastIndex}>{charactersMain[lastIndex]}</GreenButton>);
+    characterSpanArray.push(<span className={sharedStyles.greenUnderlineButton} key={lastIndex}>{charactersMain[lastIndex]}</span>);
 
     return characterSpanArray;
   }
@@ -86,22 +89,22 @@ class Characters extends React.Component {
 
     return (
       <div>
-        <DetailBoxRowTitle>Characters</DetailBoxRowTitle>
-        <DetailBoxRowItem>
+        <div className={sharedStyles.detailBoxRowTitle}>Characters</div>
+        <div className={sharedStyles.detailBoxRowItem}>
           { this.generateCharactersLine(charactersMain) }
           {moreToggle && (<span>, </span>) }
           {moreToggle && this.generateCharactersLine(charactersMore)}
           {
             charactersMore && (
-            <GreenButton
-              className="moreButton"
+            <span
+              className={`${sharedStyles.greenUnderlineButton} moreButton`}
               onClick={(e) => { this.handleClick(e); }}
             >
               {moreToggle ? ' ...less' : ' ...more'}
-            </GreenButton>
+            </span>
             )
           }
-        </DetailBoxRowItem>
+        </div>
       </div>
     );
   }
