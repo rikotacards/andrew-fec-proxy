@@ -17,5 +17,10 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.11"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-nodeunit": "^2.0.0",
+    "grunt-contrib-uglify": "^4.0.1"
+  }
 }
