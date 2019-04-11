@@ -94,7 +94,7 @@ db.queryAsync('CREATE DATABASE IF NOT EXISTS books')
           console.log('data set empty! seeding data!');
           return seedAllData(db);
         }
-        return console.log('data set already exists');
+        return db.end(() => console.log('data set already exists'));
       })
       .catch(err => console.log('err seeding db', err));
   })

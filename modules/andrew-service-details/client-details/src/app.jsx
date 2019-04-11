@@ -18,3 +18,4 @@ class DetailApp extends React.Component {
 }
 
 export default DetailApp;
+
