@@ -14,4 +14,4 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-run');
   grunt.registerTask('server', ['run:server']);
 
-}
+};
