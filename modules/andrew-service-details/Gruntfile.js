@@ -62,5 +62,5 @@ module.exports = function (grunt) {
   grunt.registerTask('dev', ['run:seed', 'webpack:dev']);
   grunt.registerTask('server', ['run:server']);
 
-  grunt.registerTask('deploy', 'aws_s3:dist');
+  grunt.registerTask('deploy', ['webpack:prod', 'aws_s3:dist']);
 };

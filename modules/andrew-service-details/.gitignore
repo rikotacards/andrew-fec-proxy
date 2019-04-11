@@ -26,4 +26,5 @@ coverage
 build/
 dist/
 awsS3.json
+.env
 
