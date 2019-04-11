@@ -1,17 +1,11 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable prefer-template */
 /* eslint-disable no-path-concat */
-
 // WEBPACK CONFIG!
-
 console.log(__dirname);
-
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
 
 module.exports = {
   entry: __dirname + '/client-details/src/index.jsx',
-  devtool: 'source-map',
   output: {
     filename: 'bundle-details.js',
     path: __dirname + '/public',
