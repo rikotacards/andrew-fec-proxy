@@ -1,18 +1,17 @@
 // eslint-disable-next-line func-names
 module.exports = function (grunt) {
-  // grunt.initConfig({
-  //   pkg: grunt.file.readJSON('package.json'),
-  //   concat: {
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
 
-  //   }
-  // })
-  grunt.registerTask('speak', function() {
-    console.log("I'm speaking");
-  });
-  grunt.registerTask('yell', function () {
-    console.log("I'm YELLING!");
+    run: {
+      server: {
+        cmd: 'nodemon',
+        args: ['server/index.js']
+      },
+    },
   });
 
-  // grunt.registerTask('s')
+  grunt.loadNpmTasks('grunt-run');
+  grunt.registerTask('server', ['run:server']);
 
 }
