@@ -1,7 +1,6 @@
 import React from 'react';
-import ToolTip from './ToolTip.jsx';
 import style from './css/Books.less';
-
+import ToolTip from '../components/ToolTip.jsx';
 
 class Books extends React.Component {
   constructor(props) {
@@ -12,40 +11,35 @@ class Books extends React.Component {
     this.toolTipTimeout = null;
     this.state = {
       books: [],
-      bookId: null,
-    };
+      bookId: null
+    }
   }
-
   getBooks() {
-
-  fetch('/books/1/authors/1/titles')
-    .then(res => res.json())
-    .then((data) => {
-      this.setState({
-        books: data,
+    console.log('running!')
+    fetch(`/books/${this.props.bookId}/authors/${this.props.authorId}/titles`)
+      .then(res => res.json())
+      .then((data) => {
+        this.setState({
+          books: data
+        });
       });
-    });
   }
-
   componentDidMount() {
-    this.getBooks();
+    this.getBooks()
   }
-
   displayToolTip(id) {
-    clearTimeout(this.toolTipTimeout);
+    clearTimeout(this.toolTipTimeout)
     this.setState({
-      bookId: id,
-    });
+      bookId: id
+    })
   }
-
   hideToolTip() {
     this.toolTipTimeout = setTimeout(() => {
       this.setState({
-        bookId: null,
-      });
-    }, 500);
+        bookId: null
+      })
+    }, 500)
   }
-
   render() {
     return (
       <div>
@@ -58,7 +52,7 @@ class Books extends React.Component {
           </div>
         ))}
       </div>
-    );
+    )
   }
 }
 

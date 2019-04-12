@@ -1,6 +1,6 @@
 import React from 'react';
-import ShelfButton from './ShelfButton.jsx';
 import style from './css/ToolTip.less';
+import ShelfButton from '../components/ShelfButton.jsx';
 
 class ToolTip extends React.Component {
   constructor(props) {
@@ -29,12 +29,12 @@ class ToolTip extends React.Component {
       </div>
       {
         this.state.expand ? (
-          <div className={style.description}>
+          <div className={style.bookDescription}>
           {this.props.description}
           <div className={style.expandText} onClick={this.handleClick.bind(this)}>...less</div>
           </div>
         ) : (
-          <div className={style.description}>
+          <div className={style.bookDescription}>
           {this.props.description.slice(0, 200)}
           <div className={style.expandText} onClick={this.handleClick.bind(this)}>...more</div>
           </div>
@@ -45,6 +45,7 @@ class ToolTip extends React.Component {
     </div>
     </div>
     </div>
+
     )
   }
 }

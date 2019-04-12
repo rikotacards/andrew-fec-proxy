@@ -1,31 +1,28 @@
 import React from 'react';
-import StarRatingComponent from 'react-star-rating-component';
-import ShelfList from "./ShelfList.jsx";
-import Rating from "./Rating.jsx";
 import style from './css/ShelfButton.less';
+import ShelfList from '../components/ShelfList.jsx';
+import Rating from '../components/Rating.jsx';
+import StarRatingComponent from 'react-star-rating-component';
 
 class ShelfButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showList: false,
-      shelf: this.props.status,
-    };
+      shelf: this.props.status
+    }
   }
-
   toggleList() {
     this.setState({
-      showList: !this.state.showList,
-    });
+      showList: !this.state.showList
+    })
   }
-
   shelfSelect(val) {
     this.setState({
-      shelf: val,
-    });
+      shelf: val
+    })
     this.props.onUpdate();
   }
-
   render() {
     return (
       <div className={style.wrapper}>
@@ -47,7 +44,7 @@ class ShelfButton extends React.Component {
           )
         }
       </div>
-    );
+    )
   }
 }
 

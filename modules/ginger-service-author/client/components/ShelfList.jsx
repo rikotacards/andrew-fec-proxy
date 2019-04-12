@@ -1,8 +1,8 @@
 import React from 'react';
-import $ from 'jquery';
-import Rating from './Rating.jsx';
-import ShelfButton from './ShelfButton.jsx';
 import style from './css/ShelfList.less';
+import $ from 'jquery';
+import Rating from '../components/Rating.jsx';
+import ShelfButton from '../components/ShelfButton.jsx';
 
 class ShelfList extends React.Component {
 
