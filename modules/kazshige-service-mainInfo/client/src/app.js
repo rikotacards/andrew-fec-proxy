@@ -10,9 +10,9 @@ import DoneIcon from '@material-ui/icons/Done';
 import StarRatingComponent from 'react-star-rating-component';
 
 
-const Dot = () => <span style={{margin:'0 5px'}}>·</span>
+const Dot = () => <span style={{ margin: '0 5px' }}>·</span>
 
-export default class App extends React.Component{
+export default class App extends React.Component {
   state = {
     isOpen: false,
     bookInfo: null,
@@ -25,7 +25,7 @@ export default class App extends React.Component{
     }],
     rating: 0
   }
-  componentDidMount(){
+  componentDidMount() {
     const bookId = this.props.match.params.id
     this.fetchData(`books/${bookId}/info`, "bookInfo")
     this.fetchData(`books/${bookId}/info/image`, "bookImage")
@@ -37,8 +37,8 @@ export default class App extends React.Component{
 
   fetchData = (url, state) => {
     axios.get(`${config.backendUrl}/${url}`)
-      .then((response)=> {
-        
+      .then((response) => {
+        console.log(response.data)
         this.setState({
           [state]: response.data
         })
@@ -53,15 +53,19 @@ export default class App extends React.Component{
     const statusArr = [];
 
     const bookId = this.props.match.params.id
-    axios.put(`${config.backendUrl}/books/${bookId}/info/users/1/readStatus`, { status: index})
-    .then(({ data })=> {
-      this.setState({
-        readStatus: data
+    axios.put(`${config.backendUrl}/books/${bookId}/info/users/1/readStatus`, { status: index })
+      .then(({ data }) => {
+        this.setState({
+          readStatus: data
+        })
       })
+    this.setState({
+      readStatus: {
+        data: {
+          status: index
+        }
+      }
     })
-    this.setState({readStatus: {data: {
-      status: index
-    }}})
   }
 
   addShelf = () => {
@@ -86,13 +90,13 @@ export default class App extends React.Component{
   getAverageRating = (ratings) => {
     return (ratings && ratings.reduce(
       (sum, currentRating) => sum + currentRating.rating
-    , 0) / ratings.length) || 5;
+      , 0) / ratings.length) || 5;
   }
 
   likedBy = (ratings) => {
     return (ratings && ratings.reduce(
       (sum, currentRating) => sum + (currentRating.rating >= 3 ? 1 : 0)
-    , 0) / ratings.length * 100) || 0;
+      , 0) / ratings.length * 100) || 0;
   }
 
   shortText = (text, len) => {
@@ -102,14 +106,17 @@ export default class App extends React.Component{
   }
 
   onStarClick = (nextValue, prevValue, name) => {
-    this.setState({rating: nextValue});
+    this.setState({ rating: nextValue });
   }
-  toggle = () => this.setState( s => ({ isOpen: !s.isOpen }))
+  toggle = () => this.setState(s => ({ isOpen: !s.isOpen }))
 
-  render(){
+  render() {
     const { bookInfo, bookImage, rating, ratings, reviews, statusOpened, options, users, readStatus, isOpen } = this.state;
-
-    const selectedOption = options.find((option, index) => (readStatus && readStatus.data? readStatus.data.status === index: index === 0));
+    console.log(readStatus);
+    const selectedOption = options
+      .find((option, index) => {
+        return readStatus && readStatus.data ? readStatus.data.status === index : index === 0;
+      }) || options[0];
 
     const averageRating = this.getAverageRating(ratings);
     const likedBy = this.likedBy(ratings);
@@ -117,16 +124,16 @@ export default class App extends React.Component{
     return (
       <Container>
         <LeftGrid>
-          { bookImage && <Image src={bookImage.image}/> }
+          {bookImage && <Image src={bookImage.image} />}
           <Wrapper>
             <DropDown>
-              <div style={{color:'#63ce92'}}><DoneIcon/></div>
+              <div style={{ color: '#63ce92' }}><DoneIcon /></div>
               <span title="Want to Read">{this.shortText(selectedOption.text, 12)}</span>
             </DropDown>
             <RightButton onClick={this.toggleMenu} className={statusOpened ? 'show-menu' : ''}>
               <Options>
                 {options.map((option, index) => (
-                  <Option onClick={() => this.toggleOption( option.text, index)}>
+                  <Option onClick={() => this.toggleOption(option.text, index)}>
                     {option.text}
                   </Option>
                 ))}
@@ -149,21 +156,21 @@ export default class App extends React.Component{
         </LeftGrid>
         <RightGrid>
           <Title>
-          { bookInfo && bookInfo.title  }
+            {bookInfo && bookInfo.title}
           </Title>
-          <Author> {`by ${ bookInfo && bookInfo.author }`}
+          <Author> {`by ${bookInfo && bookInfo.author}`}
           </Author>
           <RatingsLine>
-            <Ratings rating={averageRating}/>
+            <Ratings rating={averageRating} />
             <Dot />
-            <RatingContainer><RatingDetails  isOpen={isOpen} toggle={this.toggle} ratings={ratings || []} likedBy={likedBy} rating={averageRating} reviews={reviews || []} users={users || []} /> <RatingDetailText onClick={this.toggle}>rating details</RatingDetailText> </RatingContainer>
+            <RatingContainer><RatingDetails isOpen={isOpen} toggle={this.toggle} ratings={ratings || []} likedBy={likedBy} rating={averageRating} reviews={reviews || []} users={users || []} /> <RatingDetailText onClick={this.toggle}>rating details</RatingDetailText> </RatingContainer>
             <Dot />
-            { ratings && <span>{ratings.length} ratings</span> }
+            {ratings && <span>{ratings.length} ratings</span>}
             <Dot />
-            { reviews && <span>{reviews.length} reviews</span> }
+            {reviews && <span>{reviews.length} reviews</span>}
           </RatingsLine>
           <Description>
-          { bookInfo && bookInfo.description }
+            {bookInfo && bookInfo.description}
           </Description>
         </RightGrid>
       </Container>

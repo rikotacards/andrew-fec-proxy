@@ -16,6 +16,7 @@ const s3 = new AWS.S3({
 const createDB = () => {
   return db.queryAsync('CREATE DATABASE IF NOT EXISTS mainInfo')
     .then(() => {
+      console.log('maininfo created')
       return db.queryAsync('use mainInfo');
     })
     .then(()=> {
