@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { GreenButton } from '../header';
+import sharedStyles from '../css/SharedStyles.less';
 import Characters from '../DetailDataBoxParts/characters';
 
 describe('Characters Component', () => {
@@ -44,7 +44,7 @@ describe('Characters Component', () => {
     });
 
     test('Characters should render EIGHT data values', () => {
-      expect(wrapper.find(GreenButton).length).toEqual(8);
+      expect(wrapper.find(`.${sharedStyles.greenUnderlineButton}`).length).toEqual(8);
     });
   });
 
@@ -72,7 +72,7 @@ describe('Characters Component', () => {
 
     test('Characters should render 9 data values when moreToggle state is true', () => {
       // 10 green buttons because the moreButton is a green button as well
-      expect(wrapper2.find(GreenButton).length).toEqual(10);
+      expect(wrapper2.find(`.${sharedStyles.greenUnderlineButton}`).length).toEqual(10);
     });
   });
 });

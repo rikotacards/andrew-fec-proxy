@@ -8,4 +8,7 @@ module.exports = {
   globals: {
     randomInt: getRandomInt(1, 101),
   },
+  moduleNameMapper: {
+    '\\.(css|less|scss|sss|styl)$': '<rootDir>/node_modules/jest-css-modules',
+  },
 };

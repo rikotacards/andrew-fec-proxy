@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { GreenButton } from '../header';
+import sharedStyles from '../css/SharedStyles.less';
 import Settings from '../DetailDataBoxParts/settings';
 
 describe('Settings Component', () => {
@@ -43,7 +43,7 @@ describe('Settings Component', () => {
     });
 
     test('Settings should render three data values', () => {
-      expect(wrapper.find(GreenButton).length).toEqual(3);
+      expect(wrapper.find(`.${sharedStyles.greenUnderlineButton}`).length).toEqual(3);
     });
   });
 
@@ -71,7 +71,7 @@ describe('Settings Component', () => {
 
     test('Settings should render FOUR data values when moreToggle state is true', () => {
       // 5 green buttons because the more button is a green button as well
-      expect(wrapper2.find(GreenButton).length).toEqual(5);
+      expect(wrapper2.find(`.${sharedStyles.greenUnderlineButton}`).length).toEqual(5);
     });
   });
 });

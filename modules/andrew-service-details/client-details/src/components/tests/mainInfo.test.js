@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { MainInfo, DetailBoxRowTitle, DetailBoxRowItem } from '../DetailDataBoxParts/mainInfo';
-import { GreyItem } from '../header';
+import MainInfo from '../DetailDataBoxParts/mainInfo';
+import sharedStyles from '../css/SharedStyles.less';
 
 describe('MainInfo Component', () => {
   const mainInfo = {
@@ -17,16 +17,16 @@ describe('MainInfo Component', () => {
   });
 
   test('MainInfo should contain three DetailBoxRowTitle divs with text Original Title, ISBN, Language', () => {
-    expect(wrapper.containsMatchingElement(<DetailBoxRowTitle>Original Title</DetailBoxRowTitle>)).toEqual(true);
-    expect(wrapper.containsMatchingElement(<DetailBoxRowTitle>ISBN</DetailBoxRowTitle>)).toEqual(true);
-    expect(wrapper.containsMatchingElement(<DetailBoxRowTitle>Language</DetailBoxRowTitle>)).toEqual(true);
+    expect(wrapper.containsMatchingElement(<div className={sharedStyles.detailBoxRowTitle}>Original Title</div>)).toEqual(true);
+    expect(wrapper.containsMatchingElement(<div className={sharedStyles.detailBoxRowTitle}>ISBN</div>)).toEqual(true);
+    expect(wrapper.containsMatchingElement(<div className={sharedStyles.detailBoxRowTitle}>Language</div>)).toEqual(true);
   });
 
   test('MainInfo should contain three DetailBoxRowItem divs', () => {
-    expect(wrapper.find(DetailBoxRowItem).length).toEqual(3);
+    expect(wrapper.find(`.${sharedStyles.detailBoxRowItem}`).length).toEqual(3);
   });
 
   test('MainInfo should also contain one grey text span for isbn13 display', () => {
-    expect(wrapper.find(GreyItem).length).toEqual(1);
+    expect(wrapper.find(`.${sharedStyles.greyoutButton}`).length).toEqual(1);
   });
 });

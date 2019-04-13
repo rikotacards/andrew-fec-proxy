@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { EditionHeader, GreenButton } from '../header';
+import EditionHeader from '../header';
+import styles from './css/Header.less';
+import sharedStyles from './css/SharedStyles.less';
 
 describe('EditionHeader Component', () => {
   const wrapper = shallow(
@@ -40,7 +42,7 @@ describe('EditionHeader Component', () => {
       details,
     });
 
-    wrapper.find(GreenButton).simulate('click', { preventDefault: () => {} });
+    wrapper.find(`.${sharedStyles.greenUnderlineButton}`).simulate('click', { preventDefault: () => {} });
     expect(wrapper.state('moreToggle')).toEqual(true);
   });
 
