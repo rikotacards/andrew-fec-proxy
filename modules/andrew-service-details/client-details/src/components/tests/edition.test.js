@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Edition from '../OtherEditionsParts/edition';
 import EditionTooltip from '../OtherEditionsParts/editionTooltip';
+import styles from '../css/Edition.less';
 
 describe('Edition Component', () => {
   const editionData = {
@@ -17,7 +18,7 @@ describe('Edition Component', () => {
   });
 
   test('Edition contains an edition img', () => {
-    expect(wrapper.find('.editionImg').length).toEqual(1);
+    expect(wrapper.find(`.${styles.editionImg}`).length).toEqual(1);
   });
 
   test('Edition contains EditionTooltip component', () => {
