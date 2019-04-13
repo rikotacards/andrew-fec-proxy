@@ -1,13 +1,12 @@
-# Project Name
+# Bookshelf(Andrew) Local Proxy Server
 
-> Project description
+> Proxy server running all four modules.
+> Module instances contained in modules folder.
+> Html serves 4 bundles from cloudfront rather than local files honsted on computer.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  >hrr37 hermes-4 group repos
 
 ## Table of Contents
 
@@ -17,7 +16,7 @@
 
 ## Usage
 
-> Some usage instructions
+localhost:3005/books/:id endpoint shows page with all modules (id ranges from 1-100)
 
 ## Requirements
 
@@ -30,10 +29,10 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 ### Installing Dependencies
 
-From within the root directory:
+From within the root directory of all modules included in modules folder
+  > npm install && npm run seed && npm run start:dev
 
-```sh
-npm install -g webpack
-npm install
-```
+From within the root directory of proxy server:
+  > npm install && npm run start:proxy
+
 
