@@ -47,4 +47,5 @@ From within the root directory of all modules included in modules folder
 From within the root directory of proxy server:
   > npm install && npm run start:proxy
 
-
+Note: proxy server and andrews-module also has grunt commands avialable
+  > refer to respective Gruntfile.js files for list of commands
