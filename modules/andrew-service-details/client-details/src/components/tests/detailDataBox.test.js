@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import DetailDataBox from '../detailDataBox';
-import { MainInfo } from '../DetailDataBoxParts/mainInfo';
+import MainInfo from '../DetailDataBoxParts/mainInfo';
 import Characters from '../DetailDataBoxParts/characters';
 import Settings from '../DetailDataBoxParts/settings';
 import Awards from '../DetailDataBoxParts/awards';

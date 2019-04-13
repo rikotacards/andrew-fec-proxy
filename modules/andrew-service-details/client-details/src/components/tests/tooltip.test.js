@@ -1,8 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import EditionTooltip, {
-  Wrapper, BorderFrame, BorderCenter, Book, EditionStatusArrow, Stars, StatusButton, ToolTipArrow,
+  Stars,
 } from '../OtherEditionsParts/editionTooltip';
+import styles from '../css/EditionTooltip.less';
+import sharedStyles from '../css/SharedStyles.less';
 
 describe('EditionTooltip Component', () => {
   const tooltipData = {
@@ -21,16 +23,16 @@ describe('EditionTooltip Component', () => {
   });
 
   test('EditionTooltip contains CSS components Wrapper, BorderFrame, BorderCenter, Book and ToolTipArrow', () => {
-    expect(wrapper.find(Wrapper).length).toEqual(1);
-    expect(wrapper.find(BorderFrame).length).toEqual(1);
-    expect(wrapper.find(BorderCenter).length).toEqual(1);
-    expect(wrapper.find(Book).length).toEqual(1);
-    expect(wrapper.find(ToolTipArrow).length).toEqual(1);
+    expect(wrapper.find(`.${styles.editionTooltipWrapper}`).length).toEqual(1);
+    expect(wrapper.find(`.${styles.editionTooltipBorderFrame}`).length).toEqual(1);
+    expect(wrapper.find(`.${styles.editionTooltipBorderCenter}`).length).toEqual(1);
+    expect(wrapper.find(`.${styles.editionBook}`).length).toEqual(1);
+    expect(wrapper.find(`.${styles.editionTooltipArrow}`).length).toEqual(1);
   });
 
   test('EditionTooltip contains statusButton components and rating components', () => {
-    expect(wrapper.find(EditionStatusArrow).length).toEqual(1);
-    expect(wrapper.find(StatusButton).length).toEqual(1);
+    expect(wrapper.find(`.${styles.editionStatusArrow}`).length).toEqual(1);
+    expect(wrapper.find(`.${styles.editionStatusButton}`).length).toEqual(1);
     expect(wrapper.find(Stars).length).toEqual(1);
   });
 });
