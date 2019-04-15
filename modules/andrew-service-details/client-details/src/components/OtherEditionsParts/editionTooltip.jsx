@@ -13,10 +13,21 @@ class EditionTooltip extends React.Component {
     this.state = {
       showModal: false,
     };
+    this.handleHideModalButtonClick = this.handleHideModalButtonClick.bind(this);
+    this.handleHideModalOutsideClick = this.handleHideModalOutsideClick.bind(this);
   }
 
-  handleEnlargeClick(e) {
+  handleShowModalClick(e) {
     e.preventDefault();
+    this.setState(state => ({ showModal: !state.showModal }));
+  }
+
+  handleHideModalButtonClick(e) {
+    e.preventDefault();
+    this.setState(state => ({ showModal: !state.showModal }));
+  }
+
+  handleHideModalOutsideClick(e) {
     this.setState(state => ({ showModal: !state.showModal }));
   }
 
@@ -24,9 +35,6 @@ class EditionTooltip extends React.Component {
     const {
       isbn10, isbn13, originalPubDate, publisher, title, type, coverurl,
     } = this.props;
-    console.log(isbn10);
-    console.log('coverurl', coverurl);
-
     const { showModal } = this.state;
 
     return (
@@ -40,7 +48,7 @@ class EditionTooltip extends React.Component {
                 <div>{`isbn13: ${isbn13}`}</div>
                 <div>{`format: ${type}`}</div>
                 <div>{`Published ${originalPubDate} by ${publisher}`}</div>
-                <span className={sharedStyles.greenUnderlineButton} onClick={(e) => { this.handleEnlargeClick(e); }}>Enlarge cover</span>
+                <span className={sharedStyles.greenUnderlineButton} onClick={(e) => { this.handleShowModalClick(e); }}>Enlarge cover</span>
                 <div className={styles.editionStatusWrapper}>
                   <span title="status" style={{ paddingRight: '10px' }}>Want to Read</span>
                   <span className={styles.editionStatusButton}><div className={styles.editionStatusArrow} /></span>
@@ -56,7 +64,13 @@ class EditionTooltip extends React.Component {
         </div>
         {/* conditionally render modal */}
         {
-          showModal && <Modal coverurl={coverurl} />
+          showModal && (
+            <Modal
+              coverUrl={coverurl}
+              handleHideModalButtonClick={this.handleHideModalButtonClick}
+              handleHideModalOutsideClick={this.handleHideModalOutsideClick}
+            />
+          )
         }
       </div>
     );
